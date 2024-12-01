@@ -1,0 +1,62 @@
+# Calculadora de Conversão de Números
+# Criado por: Giovanna Cavalcante Vaz
+
+def converter_decimal():
+    # Função para converter um número decimal
+    num = int(input("Digite um número decimal: "))
+    print(f"Binário: {bin(num)[2:]}")  # Converte para binário e remove o prefixo '0b'
+    print(f"Octal: {oct(num)[2:]}")    # Converte para octal e remove o prefixo '0o'
+    print(f"Hexadecimal: {hex(num)[2:].upper()}")  # Converte para hexadecimal e remove o prefixo '0x'
+
+def converter_binario():
+    # Função para converter um número binário
+    num = input("Digite um número binário: ")
+    decimal = int(num, 2)  # Converte binário para decimal
+    print(f"Decimal: {decimal}")
+    print(f"Octal: {oct(decimal)[2:]}")   # Converte de decimal para octal
+    print(f"Hexadecimal: {hex(decimal)[2:].upper()}")  # Converte de decimal para hexadecimal
+
+def converter_octal():
+    # Função para converter um número octal
+    num = input("Digite um número octal: ")
+    decimal = int(num, 8)  # Converte octal para decimal
+    print(f"Decimal: {decimal}")
+    print(f"Binário: {bin(decimal)[2:]}")  # Converte de decimal para binário
+    print(f"Hexadecimal: {hex(decimal)[2:].upper()}")  # Converte de decimal para hexadecimal
+
+def converter_hexadecimal():
+    # Função para converter um número hexadecimal
+    num = input("Digite um número hexadecimal: ")
+    decimal = int(num, 16)  # Converte hexadecimal para decimal
+    print(f"Decimal: {decimal}")
+    print(f"Binário: {bin(decimal)[2:]}")  # Converte de decimal para binário
+    print(f"Octal: {oct(decimal)[2:]}")  # Converte de decimal para octal
+
+def menu():
+    # Função para o menu principal
+    while True:
+        print("\nCalculadora de Conversão de Números")
+        print("1. Converter de Decimal")
+        print("2. Converter de Binário")
+        print("3. Converter de Octal")
+        print("4. Converter de Hexadecimal")
+        print("5. Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            converter_decimal()  # Chama a função de conversão de decimal
+        elif opcao == '2':
+            converter_binario()  # Chama a função de conversão de binário
+        elif opcao == '3':
+            converter_octal()  # Chama a função de conversão de octal
+        elif opcao == '4':
+            converter_hexadecimal()  # Chama a função de conversão de hexadecimal
+        elif opcao == '5':
+            print("Saindo...")
+            break  # Encerra o programa
+        else:
+            print("Opção inválida! Tente novamente.")
+
+# Chama o menu principal para iniciar o programa
+menu()
